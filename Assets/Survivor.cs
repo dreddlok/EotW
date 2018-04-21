@@ -36,10 +36,20 @@ public class Survivor : MonoBehaviour {
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            selected = false;
+        }
     }
 
     private void OnMouseDown()
     {
         selected = !selected;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        targetPosition = transform.position;
     }
 }

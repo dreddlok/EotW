@@ -40,4 +40,10 @@ public class zombie : MonoBehaviour {
             }
         }
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        moveTime = 0;
+        waitTime = Random.Range(minWaitTime, maxWaitTime);
+    }
 }
